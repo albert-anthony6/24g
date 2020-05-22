@@ -1,24 +1,31 @@
-# 24g
+# 24G - Albert Valdes
 
-## Project setup
-```
-npm install
-```
+**Version 1.0.0**
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+A Full Stack project made using the Vue.js, Node, Express, mongoDB, and mongoose. Users are able to sign up, log in, and create comments for each video displayed on the site. RESTful API has been implemented into this project.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+---
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Built With
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Vue.js
+
+- Sass
+
+- Node.js
+
+- Express
+
+- MongoDB
+
+- Mongoose
+
+- Font Awesome
+
+## Acknowledgments
+
+- [Font Awesome](https://fontawesome.com/?from=io%2F) - Icons used
+
+## License and copyright
+
+© Albert Valdes, https://github.com/albert-anthony6
