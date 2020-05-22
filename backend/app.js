@@ -6,8 +6,11 @@ const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
-app.use(morgan('dev'));
-app.use(express.json()); // BODY PARSER
+// MIDDLEWARES
+if(process.env.NODE_ENV === 'development'){
+    app.use(morgan('dev'));
+    app.use(express.json()); // BODY PARSER
+}
 
 app.use('/api/v1/videos', videoRouter);
 app.use('/api/v1/users', userRouter);
