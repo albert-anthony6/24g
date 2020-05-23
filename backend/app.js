@@ -15,4 +15,10 @@ if(process.env.NODE_ENV === 'development'){
 app.use('/api/v1/videos', videoRouter);
 app.use('/api/v1/users', userRouter);
 
+app.all('*', (req, res, next) => { // Non-specified url error handler
+    res.status(404).json({
+        message: `Can't find ${req.originalUrl} on this server!`
+    });
+});
+
 module.exports = app;

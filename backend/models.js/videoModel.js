@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const videoSchema = new mongoose.Schema({
     title: {
         type: String,
         required: [true, 'Video must have a title'],
-        unique: true
+        unique: true,
+        trim: true,
+        maxlength: [40, 'Video title must be less than or equal to 40 characters'],
+        minlength: [2, 'Video title must have at least 2 characters']
     },
+    slug: String,
     video: {
         type: String,
         required: [true, 'Video must have a path']
@@ -17,7 +22,7 @@ const videoSchema = new mongoose.Schema({
     commentsQuantity: {
         type: Number,
         default: 0,
-        min: 0
+        min: [0, 'commentsQuantity cannot be below zero']
     },
     createdAt: {
         type: Date,
@@ -25,6 +30,14 @@ const videoSchema = new mongoose.Schema({
     }
 });
 
+// DOCUMENT MIDDLEWARE
+// Will only work for documents that are being saved to DB i.e. .save() or .create()
+videoSchema.pre('save', function(next) {
+    this.slug = slugify(this.title, { lower: true });
+    next();
+});
+
+// MODEL
 const Video = mongoose.model('Video', videoSchema);
 
 // SAVING DOCS TO DB AND MAKING SURE VALIDATORS WORK
