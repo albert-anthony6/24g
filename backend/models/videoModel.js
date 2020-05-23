@@ -28,6 +28,17 @@ const videoSchema = new mongoose.Schema({
         type: Date,
         default: Date.now() // mongoose converts this to current date format instead of ms
     }
+},
+{
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+});
+
+// VIRTUAL POPULATE
+videoSchema.virtual('comments', {
+    ref: 'Comment',
+    foreignField: 'video',
+    localField:'_id'
 });
 
 // DOCUMENT MIDDLEWARE
