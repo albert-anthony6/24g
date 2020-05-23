@@ -1,4 +1,4 @@
-const Video = require('../models.js/videoModel');
+const Video = require('../models/videoModel');
 const catchAsync = require('../utils/catchAsync');
 
 exports.getAllVideos = catchAsync(async (req, res) => {
