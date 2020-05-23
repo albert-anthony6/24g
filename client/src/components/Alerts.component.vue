@@ -18,13 +18,11 @@
         background-color: blue;
         color: #fff;
         padding: 1rem 2rem 1rem 2rem;
-        /* border-radius: 3px; */
         width: 100vw;
-        /* position: absolute;
-        top: 0; */
-        /* left: 50%;
-        transform: translateX(-50%); */
-        /* z-index: 999; */
+        position: absolute;
+        top: 0; 
+        left: 0;
+        z-index: 999;
         animation: showAlert .5s;
 
         &__text{

@@ -15,8 +15,8 @@
 <style lang="scss" scoped>
     .nav{
         background-color: #333;
-        height: 10rem;
-        padding: 2rem 0 2rem 4rem;
+        height: 13rem;
+        padding: 5rem 0 2rem 4rem;
         display: flex;
         align-items: center;
 

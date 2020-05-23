@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 const commentSchema = new mongoose.Schema({
     comment: {
         type: String,
-        required: [true, 'Comment cannot be empty!']
+        required: [true, 'Comment cannot be empty!'],
+        maxlength: [280, 'Comment cannot have over 280 characters'],
+        minlength: [2, 'Comment must have at least 2 characters']
     },
     createdAt: {
         type: Date,

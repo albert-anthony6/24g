@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     photo: {
         type: String,
-        default: 'here-goes-avatar-image'
+        default: 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'
     },
     password: {
         type: String,
