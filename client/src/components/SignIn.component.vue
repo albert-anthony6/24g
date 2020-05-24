@@ -41,21 +41,14 @@ import axios from 'axios';
                     console.log('Writing to session storage...');
                     sessionStorage.setItem('user', JSON.stringify(this.user));
                     if(res.data.status === 'success') {
-                        // setUserStatus(res.data.status);
                         window.setTimeout(() => {
                             window.location.assign('/');
                         }, 1500)
                     }
                 })
-                .catch(err => console.log(err.response.data.message));
+                .catch(err => alert(err.response.data.message));
             }
-        }, 
-        // mounted() {
-        //     if (!this.user) return;
-
-        //     console.log('Writing to session storage...');
-        //     sessionStorage.setItem('user', JSON.stringify(this.user));
-        // }
+        }
     }
 </script>
 

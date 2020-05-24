@@ -3,13 +3,14 @@
     <Alerts v-bind:user="globalUser"/>
     <Header v-bind:user="globalUser"/>
     <router-view></router-view>
+    <img class="24g" src="./assets/powered_by_24g.svg" alt="powered-by-24g">
   </div>
 </template>
 
 <script>
     import Alerts from './components/Alerts.component';
     import Header from './components/Header.component';
-    
+
 export default {
   name: 'App',
   data() {
@@ -29,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   *,
   *::before,
   *::after {
@@ -50,5 +51,12 @@ export default {
     line-height: 1.4;
     overflow-x: hidden;
     position: relative;
+
+    img:last-child{
+      width: 15%;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
+
 </style>

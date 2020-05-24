@@ -23,3 +23,12 @@ exports.createComment = catchAsync(async (req, res, next) => {
         }
     });
 });
+
+exports.deleteComment = catchAsync(async (req, res, next) => {
+    await Comment.deleteOne(req.body);
+
+    res.status(200).json({
+        status: 'success',
+        data: null
+    });
+});

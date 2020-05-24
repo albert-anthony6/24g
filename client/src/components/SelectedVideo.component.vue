@@ -3,7 +3,7 @@
         <h2 class="selected__title">{{video.title}}</h2>
         <video class="selected__video" :src=video.video controls :poster=video.thumb></video>
         
-        <div style="width: 70%;">
+        <div style="width: 95%;">
             <div class="selected__details">
                 <h3 class="selected__details__views">300 views</h3>
 
@@ -70,7 +70,7 @@
                         // location.reload(true);
                     }
                 } catch(err) {
-                    console.log(err.response.data.message);
+                    alert(err.response.data.message);
                 }
             }
         }
@@ -80,7 +80,7 @@
 <style lang="scss" scoped>
     .selected{
         /* background-color: red; */
-        margin: 7rem 4.5rem 3.5rem 4.5rem;
+        /* margin: 7rem 4.5rem 3.5rem 4.5rem; */
 
         &__title{
             font-size: 2.8rem;
@@ -89,7 +89,7 @@
         }
 
         &__video{
-            width: 70%;
+            width: 95%;
         }
 
         &__details{
@@ -107,6 +107,7 @@
 
         &__thumbs{
             display: flex;
+            cursor: pointer;
         }
 
         &__commentbox{

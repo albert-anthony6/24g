@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.route('/')
 .get(commentController.getAllComments)
-.post(authController.protect, commentController.createComment);
+.post(authController.protect, commentController.createComment)
+.delete(authController.protect, commentController.deleteComment);
 
 module.exports = router;
