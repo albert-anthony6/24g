@@ -6,6 +6,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -49,6 +50,8 @@ app.use(mongoSanitize());
 
 // Data sanitization against XSS attacks
 app.use(xss());
+
+app.use(compression());
 
 // Test middlware
 app.use((req, res, next) => {

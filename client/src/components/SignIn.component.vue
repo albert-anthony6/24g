@@ -38,7 +38,7 @@ import axios from 'axios';
                 })
                 .then(res => {
                     this.user = res.data.data.user;
-                    console.log('Writing to session storage...');
+                    // console.log('Writing to session storage...');
                     sessionStorage.setItem('user', JSON.stringify(this.user));
                     if(res.data.status === 'success') {
                         window.setTimeout(() => {

@@ -48,7 +48,7 @@ import axios from 'axios';
                         sessionStorage.setItem('user', JSON.stringify(''));
                     }
                 } catch(err) {
-                    console.log(err.response.data.message);
+                    alert(err.response.data.message);
                 }
             }
         }

@@ -39,10 +39,10 @@
             },
             fetchData(){
                 if (sessionStorage.homeVideos) {
-                    console.log('Getting from session storage...');
+                    // console.log('Getting from session storage...');
                     this.videos = JSON.parse(sessionStorage.homeVideos);
                 } else {
-                    console.log('Getting from API and setting res to session storage...');
+                    // console.log('Getting from API and setting res to session storage...');
                     axios.get('http://localhost:8000/api/v1/videos')
                     .then(res => {
                         sessionStorage.setItem('homeVideos', JSON.stringify(res.data.data.videos));

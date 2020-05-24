@@ -71,8 +71,7 @@
                     });
                     if (res.data.status === 'success') {
                         this.$emit('newcomment');
-                        console.log(res);
-                        // location.reload(true);
+                        // console.log(res);
                     }
                 } catch(err) {
                     alert(err.response.data.message);
