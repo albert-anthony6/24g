@@ -45,7 +45,7 @@
             }
         }
 
-        @media screen and (max-width: 430px){
+        @media screen and (max-width: 413px){
             &__title{
                 font-size: 1rem;
                 /* display: none; */

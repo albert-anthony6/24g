@@ -8,8 +8,8 @@
                 <h3 class="selected__details__views">{{video.views}} views</h3>
 
                 <div class="selected__thumbs">
-                    <div class="selected__like">&#128077; {{video.likes}}</div>
-                    <div class="selected__dislike">&#128078; {{video.dislikes}}</div>
+                    <div @click="video.likes+=1" class="selected__like">&#128077; {{video.likes}}</div>
+                    <div @click="downvote" class="selected__dislike">&#128078; {{video.dislikes}}</div>
                 </div>
             </div>
 
@@ -53,6 +53,10 @@
                 this.videoId = this.video._id
                 this.createComment(this.text, this.videoId, this.userId);
                 this.text = '';
+            },
+            downvote() {
+                if(this.video.dislikes > 0) this.video.dislikes-=1;
+                return;
             },
             async createComment(comment, video, user) {
                 try{

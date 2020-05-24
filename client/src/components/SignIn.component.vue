@@ -54,7 +54,7 @@ import axios from 'axios';
 
 <style lang="scss">
     .form{
-        &--signin{
+        /* &--signin{
             position: absolute;
             top: 36%;
             left: 35%;
@@ -66,14 +66,17 @@ import axios from 'axios';
             top: 20%;
             left: 10%;
             height: 37rem;
-        }
+        } */
 
         display: flex;
+        color: #fff;
         flex-direction: column;
+        margin: 0 auto;
+        margin-bottom: 2rem;
         width: 30rem;
         padding: 1rem 1rem 2rem 1rem;
         line-height: 2;
-        background-color: rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, .8);
 
         &__h2{
             margin: 0 auto;
@@ -103,6 +106,11 @@ import axios from 'axios';
             transition: all .2s;
 
             &:hover{color: #000;}
+        }
+
+        @media screen and (max-width: 500px){
+            width: 100vw;
+            margin-bottom: 0;
         }
     }
 </style>
