@@ -41,7 +41,7 @@ import axios from 'axios';
                 this.confirm = '';
             },
             signup(name, email, password, passwordConfirm) {
-                axios.post('http://localhost:8000/api/v1/users/signup', {
+                axios.post('/api/v1/users/signup', {
                     name,
                     email,
                     password,
@@ -58,7 +58,7 @@ import axios from 'axios';
                         }, 1500)
                     }
                 })
-                .catch(err => alert(err.response.data.message));
+                .catch(() => alert('One of these inputs is invalid. Passwords must be at least 8 characters. Please try again!'));
             }
         },
     }
