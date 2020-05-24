@@ -1,7 +1,7 @@
 <template>
     <div class="alerts">
-        <p v-if="!user" class="alert__text">Welcome, Albert</p>
-        <p v-else class="alert__text">Welcome, {{user.name}}</p>
+        <p v-if="!user" class="alerts__text"><span class="alerts--welcome">Welcome,</span> Albert</p>
+        <p v-else class="alerts__text alerts__text--welcome">Welcome, {{user.name}}</p>
     </div>
 </template>
 
@@ -17,7 +17,7 @@
     .alerts{
         /* display: none; */
         /* display: inline-block; */
-        background-color: blue;
+        background-color: rgb(10, 132, 231);
         color: #fff;
         padding: 1rem 2rem 1rem 2rem;
         width: 100vw;
@@ -27,8 +27,12 @@
         z-index: 999;
         animation: showAlert .5s;
 
-        &__text{
+        &--welcome{
             font-weight: 300;
+        }
+
+        &__text{
+            font-weight: 600;
             font-size: 1.5rem;
         }
 

@@ -77,8 +77,23 @@
             width: 25%;
         }
 
-        &__videolist{
+        @media screen and (max-width: 900px){
+            margin: 7rem 0 3.5rem 1.5rem;
+        }
 
+        @media screen and (max-width: 700px){
+            flex-direction: column-reverse;
+
+            &__right{
+                display: flex;
+                width: 100%;
+                padding-right: 2.5rem;
+                justify-content: space-between;
+            }
+
+            &__left{
+                width: 100%
+            }
         }
     }
 </style>

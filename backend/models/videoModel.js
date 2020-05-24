@@ -10,6 +10,21 @@ const videoSchema = new mongoose.Schema({
         maxlength: [40, 'Video title must be less than or equal to 40 characters'],
         minlength: [2, 'Video title must have at least 2 characters']
     },
+    views: {
+        type: Number,
+        default: 300,
+        min: [true, 'Videos cannot have below zero likes.']
+    },
+    likes: {
+        type: Number,
+        default: 172,
+        min: [true, 'Videos cannot have below zero likes.']
+    },
+    dislikes: {
+        type: Number,
+        default: 3,
+        min: [true, 'Videos cannot have below zero dislikes.']
+    },
     slug: String,
     video: {
         type: String,

@@ -58,6 +58,7 @@ import axios from 'axios';
 <style lang="scss" scoped>
     .nav{
         background-color: #333;
+        width: 100vw;
         height: 13rem;
         padding: 5rem 4rem 2rem 4rem;
         display: flex;
@@ -110,6 +111,26 @@ import axios from 'axios';
                 &:hover{
                     color: #000;
                 }
+            }
+        }
+
+        @media screen and (max-width: 900px){
+            padding: 5rem 1.5rem 2rem 1.5rem;
+
+            &__item{
+                &:not(:first-child){
+                    margin-left: 2rem;
+                }
+            }
+        }
+
+        @media screen and (max-width: 700px){
+            flex-direction: column;
+            height: 25rem;
+            padding: 7rem 0 2rem 0;
+
+            &__left{
+                flex-direction: column;
             }
         }
     }

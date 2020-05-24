@@ -24,6 +24,10 @@
 
         &__picture{
             width: 7%;
+
+            @media screen and (max-width: 550px){
+                width: 10%;
+            }
         }
 
         &__text{

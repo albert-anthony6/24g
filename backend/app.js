@@ -16,7 +16,13 @@ const commentRouter = require('./routes/commentRoutes');
 const app = express();
 
 // Setting up cors config
-app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
+app.use(cors({credentials: true, origin: 'http://localhost:8082'}));
+// app.use(function(req, res, next) {
+//     res.header('Access-Control-Allow-Origin', 'http://localhost:8081');
+//     res.header('Access-Control-Allow-Methods', 'GET,PATCH,POST,DELETE');
+//     res.header('Access-Control-Allow-Headers', 'Content-Type');
+//     next();
+// });
 
 // GLOBAL MIDDLEWARES
 // Set security HTTP headers

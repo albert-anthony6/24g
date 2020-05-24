@@ -37,6 +37,7 @@ export default {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   html{
@@ -49,11 +50,10 @@ export default {
     font-size: 1.4rem;
     color: #000;
     line-height: 1.4;
-    overflow-x: hidden;
     position: relative;
 
     img:last-child{
-      width: 15%;
+      width: 23rem;
       margin-left: 50%;
       transform: translateX(-50%);
     }

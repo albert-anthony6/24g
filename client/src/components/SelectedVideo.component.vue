@@ -5,11 +5,11 @@
         
         <div style="width: 95%;">
             <div class="selected__details">
-                <h3 class="selected__details__views">300 views</h3>
+                <h3 class="selected__details__views">{{video.views}} views</h3>
 
                 <div class="selected__thumbs">
-                    <div class="selected__like">&#128077; 47</div>
-                    <div class="selected__dislike">&#128078; 3</div>
+                    <div class="selected__like">&#128077; {{video.likes}}</div>
+                    <div class="selected__dislike">&#128078; {{video.dislikes}}</div>
                 </div>
             </div>
 
@@ -48,6 +48,7 @@
         methods: {
             handleSubmit(event) {
                 event.preventDefault();
+                if(!this.user) return alert('Please sign in to comment.');
                 this.userId = this.user._id
                 this.videoId = this.video._id
                 this.createComment(this.text, this.videoId, this.userId);
@@ -79,8 +80,6 @@
 
 <style lang="scss" scoped>
     .selected{
-        /* background-color: red; */
-        /* margin: 7rem 4.5rem 3.5rem 4.5rem; */
 
         &__title{
             font-size: 2.8rem;
