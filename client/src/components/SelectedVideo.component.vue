@@ -13,12 +13,13 @@
                 </div>
             </div>
 
-            <div class="selected__commentbox">
+            <form class="selected__commentbox">
                 <label for="comments" class="selected__commentbox__label">Comments</label>
-                <textarea class="selected__commentbox__textarea" rows="4" id="comments" placeholder="Type a sweet comment..."></textarea>
-            </div>
+                <textarea v-model="text" class="selected__commentbox__textarea" rows="4" id="comments" placeholder="Type a sweet comment..."></textarea>
+                
+                <button @click="handleSubmit" class="selected__commentBtn">add comment</button>
+            </form>
 
-            <button class="selected__commentBtn">add comment</button>
 
             <div v-bind:key="comment._id" v-for="comment in video.comments" class="selected__comments">
                 <Comment v-bind:comment="comment"/>
@@ -29,12 +30,49 @@
 
 <script>
     import Comment from './Comment.component.vue';
+    import axios from 'axios';
 
     export default {
         name: 'SelectedVideo',
-        props: ["video"],
+        data() {
+            return {
+                text: null,
+                videoId: null,
+                userId: null
+            }
+        },
+        props: ["video", "user"],
         components: {
             Comment
+        },
+        methods: {
+            handleSubmit(event) {
+                event.preventDefault();
+                this.userId = this.user._id
+                this.videoId = this.video._id
+                this.createComment(this.text, this.videoId, this.userId);
+                this.text = '';
+            },
+            async createComment(comment, video, user) {
+                try{
+                    const res = await axios({
+                        method: 'POST',
+                        url: 'http://localhost:8000/api/v1/comments/',
+                        data: {
+                            comment,
+                            video,
+                            user
+                        }
+                    });
+                    if (res.data.status === 'success') {
+                        this.$emit('newcomment');
+                        console.log(res);
+                        // location.reload(true);
+                    }
+                } catch(err) {
+                    console.log(err.response.data.message);
+                }
+            }
         }
     }
 </script>

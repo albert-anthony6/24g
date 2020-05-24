@@ -1,16 +1,30 @@
 <template>
   <div id="app">
-    <Home/>
+    <Alerts v-bind:user="globalUser"/>
+    <Header v-bind:user="globalUser"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from './Home.page';
-
+    import Alerts from './components/Alerts.component';
+    import Header from './components/Header.component';
+    
 export default {
   name: 'App',
+  data() {
+      return {
+          globalUser: null
+      }
+  },
   components: {
-    Home
+    Alerts,
+    Header
+  },
+  mounted(){
+    if (sessionStorage.user) {
+      this.globalUser = JSON.parse(sessionStorage.user);
+    }
   }
 }
 </script>

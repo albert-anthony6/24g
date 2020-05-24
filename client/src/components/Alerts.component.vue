@@ -1,13 +1,15 @@
 <template>
     <div class="alerts">
-        <p class="alert__text">Welcome, Albert</p>
+        <p v-if="!user" class="alert__text">Welcome, Albert</p>
+        <p v-else class="alert__text">Welcome, {{user.name}}</p>
     </div>
 </template>
 
 <script>
 
     export default {
-        name: 'Alerts'
+        name: 'Alerts',
+        props: ["user"]
     }
 </script>
 
